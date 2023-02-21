@@ -177,12 +177,7 @@ const server = {
         let _this = this;
 
         if('WebSocket' in window){
-			let wxUrl = _this.updateUrl + "?t=111&g=" + encodeURIComponent(_this.gridKey);
-			if(_this.updateUrl.indexOf('?') > -1){
-				wxUrl = _this.updateUrl + "&t=111&g=" + encodeURIComponent(_this.gridKey);
-			}
-
-	        _this.websocket = new WebSocket(wxUrl);
+	        _this.websocket = new WebSocket(_this.updateUrl);
 
 	        //连接建立时触发
 	        _this.websocket.onopen = function() {
