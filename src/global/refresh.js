@@ -99,6 +99,7 @@ function jfrefreshgrid(data, range, allParam, isRunExecFunction = true, isRefres
         }
         
         Store.jfredo.push({ 
+            "_silence": allParam._silence ?? false,//为了向后兼容，默认为false
             "type": "datachange", 
             "data": Store.flowdata, 
             "curdata": data,

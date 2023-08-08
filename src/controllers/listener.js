@@ -24,7 +24,7 @@ function redoAccessible(len) {
 const initListener = function(){
     // createProxy(Store,['jfredo']);
     createProxy(Store, 'jfredo',(target, property, val, receiver)=>{
-        if (property !== 'length') {
+        if (property !== 'length' && !val._silence) {//检查是否触发事件
             //  钩子函数
             method.createHookFunction('updated',val)
         }
